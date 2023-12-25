@@ -8,12 +8,14 @@
   ******************************************************************************
 */
 
+#define LV_USE_DEMO_STRESS
 
 #include "stm32f4xx.h"
 #include "hal_stm_lvgl/stm32f429i_discovery.h"
 
 #include "lvgl/lvgl.h"
-#include "lvgl/examples/lv_examples.h"
+#include "lv_demo_widgets.h"
+#include "lv_demo_stress.h"
 
 #include "hal_stm_lvgl/tft/tft.h"
 #include "hal_stm_lvgl/touchpad/touchpad.h"
@@ -41,7 +43,8 @@ int main(void)
 	tft_init();
 	touchpad_init();
 
-//	lv_example_scroll_3();
+	//lv_demo_stress();
+	//lv_example_scroll_3();
 //	lv_example_chart_7();
 
 	lv_demo_widgets();
@@ -127,4 +130,3 @@ static void SystemClock_Config(void)
   PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_8;
   HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct);
 }
-
